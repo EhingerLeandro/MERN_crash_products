@@ -6,7 +6,6 @@ import Navbar from "./components/Navbar";
 import HomePage from "./pages/HomePage";
 import CreatePage from "./pages/CreatePage";
 
-
 function App() {
 
   return (

@@ -9,7 +9,7 @@ import routerProduct from "./routes/route.product.js";
 dotenv.config(/*{ path: '../.env' }*/);
 
 const app = express();
-app.use(express.json()); // it parses the request
+app.use(express.json()); // it parses the request, its a middleware
 
 app.use("/api/products", routerProduct);
 

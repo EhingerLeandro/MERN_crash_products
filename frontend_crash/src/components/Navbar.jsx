@@ -21,17 +21,18 @@ const Navbar = () => {
           sm:"row"
         }}
       >
-        <Text
-          bgGradient='linear(to-l, #7928CA, #FF0080)'
-          bgClip='text'
-          textAlign="center"
-          textTransfrom="uppercase"
-          fontSize={{base:"22", sm:"28"}}
-          fontWeight='extrabold'
-        >
-          Product Store 
-        </Text>
-        <HStack>
+        <Link to={"/"}>
+          <Text
+            bgGradient='linear(to-l, #7928CA, #FF0080)'
+            bgClip='text'
+            textAlign="center"
+            textTransfrom="uppercase"
+            fontSize={{base:"22", sm:"28"}}
+            fontWeight='extrabold'>
+            Product Store 
+          </Text>
+        </Link>
+        <HStack> 
           <Link to={"/create"}>
             {/* <IconButton icon={<AddIcon/>}></IconButton> */}
             <Button>

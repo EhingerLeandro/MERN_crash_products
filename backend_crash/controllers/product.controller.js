@@ -1,9 +1,10 @@
 import Product from "../model/product.model.js";
+import mongoose from "mongoose";
 
 /*---GET---*/
 export const getProduct = async(req, res)=>{
     try{
-        const products = await Product.find({})
+        const products = await Product.find({}) //This sintax ({}) allows to bring all the data
         res.status(200)
         // .send(products)  //This cannot be used while working with .json()
         .json({success:true, data:products})
@@ -27,13 +28,14 @@ export const putProduct = async(req, res)=>{
     }
     // el catch es para errores en la comunicación con el servidor
     catch(error){ 
-        res.status(500).jason({success:false, message: " Product couldn't be updated"});
+        res.status(500).json({success:false, message: " Product couldn't be updated"});
     }
 }
 
 /*---POST---*/
 export const postProduct = async(req, res)=>{
-    const product = req.body; //user will send this data with a form 
+    /*req.body -> user will send this data using a form, product will be an object */
+    const product = req.body; 
     if(!product.name|| !product.price || !product.image){
       return  res.status(404).json({success:false, message:"Please, provide all fields"});
     }
