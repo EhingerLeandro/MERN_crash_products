@@ -57,6 +57,7 @@ export const useProductStore = create((set)=>({
         //Updates the UI immediately without needing a refresh
         set((state)=>({
             products: state.products.map((product)=> product._id == prodId? data.data: product)
-        }))
+        }));
+        return {success:true, message:data.message}
     }
 }))

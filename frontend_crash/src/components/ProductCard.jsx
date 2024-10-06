@@ -25,7 +25,7 @@ const ProductCard = ({product})=>{
         console.log("success-->",success, " message-->" , message); 
        if(!success){
             toast({
-                title: 'Error.',
+                title: 'Error',
                 description: message,
                 status: 'error',
                 duration: 3000,
@@ -33,7 +33,7 @@ const ProductCard = ({product})=>{
             })
         }else{
             toast({
-                title: 'Success Message',
+                title: 'Success',
                 description: message,
                 status: 'success',
                 duration: 3000,
@@ -42,7 +42,24 @@ const ProductCard = ({product})=>{
         }
     }
     const handleUpdate = async(paramId, updatedProduct)=>{
-       await updateProduct(paramId, updatedProduct)
+       const {success, message} = await updateProduct(paramId, updatedProduct);
+       onClose();
+       if(success){
+        toast({
+            title: 'Success',
+            description: "Product updated",
+            status: 'success',
+            duration: 3000,
+            isClosable: true,
+        })
+       }else{
+        toast({
+            title: 'Error',
+            description: message,
+            status: 'error',
+            duration: 3000,
+            isClosable: true,
+        })}
     }
 
     return(
