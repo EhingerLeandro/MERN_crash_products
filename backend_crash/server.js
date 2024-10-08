@@ -11,13 +11,13 @@ dotenv.config(/*{ path: '../.env' }*/);
 
 const app = express();
 app.use(express.json()); // it parses the request, its a middleware
-const __dirname = path.resolve();
 app.use("/api/products", routerProduct);
 
+const __dirname = path.resolve();
 if(process.env.NODE_ENV === "production"){
-    app.use(express.static(path.join(__dirname, "/frontend/dis")));
+    app.use(express.static(path.join(__dirname, "frontend_crash", "dist")));
 
-    app.length("*", (req, res)=>{
+    app.get("*", (req, res)=>{
         res.sendFile(path.resolve(__dirname, "frontend_crash", "dist", "index.html"));
     })
 

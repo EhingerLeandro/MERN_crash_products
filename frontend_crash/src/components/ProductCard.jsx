@@ -14,9 +14,9 @@ const ProductCard = ({product})=>{
     const textColor =  useColorModeValue("gray.600", "gray.200")
     const boxBg = useColorModeValue("gray.200", "gray.800");
     const {deleteProduct, updateProduct} = useProductStore();
-    const { isOpen, onOpen, onClose } = useDisclosure()
+    const { isOpen, onOpen, onClose } = useDisclosure();
     const toast = useToast();
-    const [updatedProduct, setUpdatedProduct] = useState(product)
+    const [updatedProduct, setUpdatedProduct] = useState(product);
     
     console.log("UpdatedProduct --> ", updatedProduct)
     async function buttonDelete (paramId) {
@@ -80,7 +80,7 @@ const ProductCard = ({product})=>{
                 fontSize="xl"  mb={4}
                 color={textColor}
                 >
-                    {product.price}
+                    {`$ ${product.price}`}
                 </Text>
                 <HStack>
                     <IconButton icon={<EditIcon/>} onClick ={onOpen} colorScheme="blue" />
@@ -104,7 +104,7 @@ const ProductCard = ({product})=>{
                                 name="price" 
                                 value={updatedProduct.price}
                                 type="number"
-                                onChange={(e)=>setUpdatedProduct({...updatedProduct, number: e.target.value})}
+                                onChange={(e)=>setUpdatedProduct({...updatedProduct, price: e.target.value})}
                             />
                             <Input placeholder="Image Link"
                                 name="image" 

@@ -5,8 +5,10 @@
   "main": "index.js",
   "scripts": {
     "front": "cd frontend_crash && npm run dev",
-    "back": "nodemon backend_crash/server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "back": "cross-env NODE_ENV=development nodemon backend_crash/server.js",
+    "build": "cd frontend_crash && npm run build",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prod": "cross-env NODE_ENV=production node backend_crash/server.js"
   },
   "type": "module",
   "keywords": [],
@@ -17,5 +19,8 @@
     "express": "^4.20.0",
     "mongoose": "^8.6.1",
     "nodemon": "^3.1.4"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3"
   }
 }

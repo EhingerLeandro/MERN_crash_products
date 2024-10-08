@@ -4,6 +4,7 @@ import {Container, Heading,
   Box, useColorModeValue,
   VStack, Input, Button, useToast} from "@chakra-ui/react";
 import {useProductStore} from "../store/product";
+import { useNavigate } from "react-router-dom";
 
 const CreatePage = () => {
   const [newProduct, setNewProduct] = useState({
@@ -14,6 +15,7 @@ const CreatePage = () => {
   
   const toast = useToast();
   const {createProducts} = useProductStore(); 
+  let navigate = useNavigate()
 
   async function handleButton(){
     const {success, message} = await createProducts(newProduct);
@@ -37,6 +39,7 @@ const CreatePage = () => {
     }
     console.log("success -> ", success);
     console.log("message -> ", message);
+    navigate("/");
   }
 
   return (
