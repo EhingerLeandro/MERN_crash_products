@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "engines": {
+    "node":"20.12.2"
+  },
   "scripts": {
     "front": "cd frontend_crash && npm run dev",
     "back": "cross-env NODE_ENV=development nodemon backend_crash/server.js",

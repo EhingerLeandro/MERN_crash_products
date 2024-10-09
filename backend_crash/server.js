@@ -4,9 +4,6 @@ import {connectDB} from "./config/db.js";
 import path from "path";
 import routerProduct from "./routes/route.product.js";
 
-// import Product from "./model/product.model.js";
-// import mongoose from "mongoose";
-
 dotenv.config(/*{ path: '../.env' }*/);
 
 const app = express();

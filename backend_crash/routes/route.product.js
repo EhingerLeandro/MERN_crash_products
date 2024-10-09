@@ -1,5 +1,4 @@
 import express from "express";
-import Product from "../model/product.model.js";
 import {getProduct, putProduct, postProduct, deleteProduct} from "../controllers/product.controller.js"
 
 
