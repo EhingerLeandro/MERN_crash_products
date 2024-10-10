@@ -1,4 +1,4 @@
-### MERN PRODUCT EDITOR
+### M.E.R.N. PRODUCT EDITOR
 
 This project is about an app, that allows to create, edit, and erase different products, you can set an image URL, and you can define the name and price. It Uses REACT (frontend), EXPRES.JS (backend), CHAKRA UI (interface), MONGODB (database) and ZUSTAND (state manager).
 
