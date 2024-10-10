@@ -44,8 +44,8 @@ const CreatePage = () => {
 
   return (
     <Container maxW={"container.sm"}>
-      <Heading as={"h1"} size={"2xl"} 
-      textAlign={"center"} mb={8} p={2}>
+      <Heading as={"h1"} 
+      textAlign={"center"} mt={8} mb={2} p={2}>
         Create New Product!
       </Heading>
       <Box w={"full"} bg={useColorModeValue("white", "gray.800")}

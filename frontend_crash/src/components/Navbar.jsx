@@ -21,7 +21,7 @@ const Navbar = () => {
         }}
       >
         <Link to={"/"}>
-          <Text
+          <Text m="2" 
             bgGradient='linear(to-l, #7928CA, #FF0080)'
             bgClip='text'
             textAlign="center"
@@ -31,7 +31,7 @@ const Navbar = () => {
             Product Store 
           </Text>
         </Link>
-        <HStack> 
+        <HStack m="2"> 
           <Link to={"/create"}>
             {/* <IconButton icon={<AddIcon/>}></IconButton> */}
             <Button>
